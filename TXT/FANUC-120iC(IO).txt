@@ -1,0 +1,104 @@
+Hostname: FANUC-120iC
+Robot No: YS41585
+F Number: YS41585
+VERSION : ArcTool       
+$VERSION: V8.30330
+
+DI
+DI[1]	ON	t1fence
+DI[2]	OFF	t1curtain
+DI[3]	ON	t2fence
+DI[4]	OFF	t2curtain
+DI[5]	OFF	p1_accept
+DI[6]	OFF	p1_hold
+DI[7]	OFF	p2_accept
+DI[8]	OFF	p2_hold
+DI[33]	OFF	errorNUMBER
+DI[41]	OFF	cycleON
+DI[42]	ON	ARCestablished
+DI[43]	OFF	touchSENSED
+DI[44]	OFF	powerSOURCEready
+DI[45]	OFF	ERROR
+DI[46]	OFF	ready
+DI[47]	OFF	localREMOTE
+DI[48]	OFF	autoMANUAL
+DI[49]	OFF	throughput1
+DI[52]	OFF	cut ab
+DI[54]	OFF	throughput6
+DO
+DO[1]	OFF	sc1
+DO[2]	OFF	sc2
+DO[3]	OFF	blow
+DO[4]	OFF	BRScut
+DO[5]	OFF	BRSspray
+DO[6]	OFF	BRSgrindup
+DO[7]	OFF	BRSgrindstart
+DO[8]	OFF	table1 red
+DO[9]	OFF	table1 green
+DO[10]	OFF	table1 ring
+DO[11]	OFF	table2 red
+DO[12]	OFF	table2 green
+DO[13]	OFF	table2 ring
+DO[33]	OFF	memory channel
+DO[41]	OFF	dynamics
+DO[49]	OFF	start
+DO[51]	OFF	wireINCH
+DO[52]	OFF	wireRETRACT
+DO[53]	OFF	GasPurge
+DO[55]	OFF	touchSENSING
+DO[56]	OFF	OnLine
+DO[57]	OFF	FIELDbusCHECK
+DO[58]	OFF	errorRESET
+DO[62]	OFF	extOUT1
+DO[63]	OFF	extOUT2
+DO[64]	OFF	extAUT3
+
+AI
+AI[1]	0	weldingCURRENT
+AI[2]	0	weldingVOLTAGE
+AO
+AO[1]	0	wireFEEDspeed
+AO[2]	0	voltage,trim
+
+GI
+GI[3]	0	ErrorNumber
+GO
+GO[3]	0	memoryCHANNEL
+GO[4]	0	Dinamics
+
+SI
+SI[1]	OFF	Fault reset
+SI[2]	ON	Remote
+SI[3]	ON	Hold
+SI[6]	OFF	Cycle start
+SI[8]	ON	CE/CR Select b0
+SI[9]	ON	CE/CR Select b1
+SO
+SO[1]	OFF	Cycle start
+SO[2]	OFF	Hold
+SO[3]	OFF	Fault LED
+SO[4]	OFF	Batt alarm
+SO[7]	OFF	TP enabled
+
+RI
+RI[1]	OFF	q1
+RI[2]	OFF	q2
+RO
+RO[8]	OFF	HOME REF POS
+
+FLAG
+F[1010]	OFF	weld count started   
+F[1011]	OFF	FLASH          
+F[1012]	OFF	macro zummer      
+F[1013]	ON	no error        
+F[1014]	OFF	test mode        
+F[1015]	OFF	table2 ready      
+F[1016]	OFF	table2 visited     
+F[1017]	OFF	table2 welded      
+F[1018]	OFF	table2 work       
+F[1019]	OFF	table1 ready      
+F[1020]	OFF	table1 visited     
+F[1021]	OFF	table1 welded      
+F[1022]	OFF	table1 work       
+F[1023]	OFF	USED BY BUTTON2     
+F[1024]	OFF	USED BY BUTTON1     

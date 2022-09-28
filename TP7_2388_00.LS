@@ -1,0 +1,76 @@
+/PROG  TP7_2388_00
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "T_2388";
+PROG_SIZE	= 1019;
+CREATE		= DATE 22-09-16  TIME 14:59:46;
+MODIFIED	= DATE 22-09-27  TIME 15:06:48;
+FILE_NAME	= T_1718_0;
+VERSION		= 0;
+LINE_COUNT	= 45;
+MEMORY_SIZE	= 1519;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+  ARC Welding Equipment : 1,*,*,*,*;
+
+MPAS ;
+MPAS_NUM_PASSES        : 0;
+MPAS_LAST_PASS         : 0;
+MPAS_CURRENT_PASS      : 0;
+MPAS_STATUS_PASS       : 0;
+/MN
+   1:   ;
+   2:  LBL[1:INIT] ;
+   3:  UTOOL_NUM=1 ;
+   4:  UFRAME_NUM=0 ;
+   5:  !RESET START/PWR-ON CNT ;
+   6:  R[112:START-CNT]=0    ;
+   7:   ;
+   8:   ;
+   9:   ;
+  10:  LBL[2:START] ;
+  11:  CALL A_HOME_00    ;
+  12:  !WAIT BUTTON ;
+  13:  CALL A_BUTTON1    ;
+  14:  CALL TP7_2388_99    ;
+  15:   ;
+  16:   ;
+  17:   ;
+  18:  !WIRE CYCLE COUNTER ;
+  19:  LBL[3:WIRE-CNT] ;
+  20:  IF R[110:WIRE-CNT]<8,JMP LBL[5] ;
+  21:  !WIRE CHANGE ;
+  22:  LBL[4:CHANGE WIRE] ;
+  23:  CALL A_SOUNDLLL    ;
+  24:  CALL A_SOUNDLLL    ;
+  25:  CALL A_WIRE_CNG    ;
+  26:  !RESET WIRE CYCLE COUNTER ;
+  27:  R[110:WIRE-CNT]=0    ;
+  28:   ;
+  29:   ;
+  30:   ;
+  31:  !GAS CYCLE COUNTER ;
+  32:  LBL[5:GAS-CNT] ;
+  33:  IF R[111:GAS-CNT]<13,JMP LBL[2] ;
+  34:  !GAS CHANGE ;
+  35:  LBL[6:CHANGE GAS] ;
+  36:  CALL A_SOUNDLLL    ;
+  37:  CALL A_SOUNDLLL    ;
+  38:  CALL A_HOME_01H    ;
+  39:  CALL A_BUTTON1    ;
+  40:  !RESET GAS CYCLE COUNTER ;
+  41:  R[111:GAS-CNT]=0    ;
+  42:  JMP LBL[2] ;
+  43:   ;
+  44:   ;
+  45:  LBL[999:END] ;
+/POS
+/END

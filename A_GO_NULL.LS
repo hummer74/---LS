@@ -1,0 +1,35 @@
+/PROG  A_GO_NULL
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "GO NULL JOINT";
+PROG_SIZE	= 303;
+CREATE		= DATE 21-01-28  TIME 14:08:44;
+MODIFIED	= DATE 22-02-02  TIME 11:06:52;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 10;
+MEMORY_SIZE	= 643;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+  ARC Welding Equipment : 1,*,*,*,*;
+/MN
+   1:  !***** ;
+   2:  !GO NULL PROGRAM ;
+   3:  !***** ;
+   4:  UFRAME_NUM=0 ;
+   5:  UTOOL_NUM=1 ;
+   6:  !START ;
+   7:J PR[10:NULL] 10% FINE    ;
+   8:  CALL A_SOUNDS    ;
+   9:  !END ;
+  10:  END ;
+/POS
+/END

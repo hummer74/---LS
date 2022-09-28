@@ -1,0 +1,56 @@
+/PROG  KAN_CALC	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 1131;
+CREATE		= DATE 19-05-30  TIME 20:06:42;
+MODIFIED	= DATE 19-05-30  TIME 20:41:00;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 25;
+MEMORY_SIZE	= 1403;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+  ARC Welding Equipment : 1,*,*,*,*;
+
+MPAS ;
+MPAS_NUM_PASSES        : 0;
+MPAS_LAST_PASS         : 0;
+MPAS_CURRENT_PASS      : 0;
+MPAS_STATUS_PASS       : 0;
+/MN
+   1:  PR[1:HOME_00]=LPOS    ;
+   2:  PR[2:HOME_00H]=LPOS    ;
+   3:  PR[3:HOME_01]=LPOS    ;
+   4:  PR[4:HOME_01H]=LPOS    ;
+   5:   ;
+   6:   ;
+   7:  PR[1,1:HOME_00]=PR[10,1:NULL]+R[20:dX]+R[23:RAD]    ;
+   8:  PR[1,2:HOME_00]=PR[10,2:NULL]+R[21:dY]    ;
+   9:  PR[1,3:HOME_00]=PR[10,3:NULL]+R[22:dZ]    ;
+  10:   ;
+  11:  PR[2,1:HOME_00H]=PR[10,1:NULL]+R[20:dX]    ;
+  12:  PR[2,2:HOME_00H]=PR[10,2:NULL]+R[21:dY]+R[23:RAD]    ;
+  13:  PR[2,3:HOME_00H]=PR[10,3:NULL]+R[22:dZ]    ;
+  14:   ;
+  15:  PR[3,1:HOME_01]=PR[10,1:NULL]+R[20:dX]-R[23:RAD]    ;
+  16:  PR[3,2:HOME_01]=PR[10,2:NULL]+R[21:dY]    ;
+  17:  PR[3,3:HOME_01]=PR[10,3:NULL]+R[22:dZ]    ;
+  18:   ;
+  19:  PR[4,1:HOME_01H]=PR[10,1:NULL]+R[20:dX]    ;
+  20:  PR[4,2:HOME_01H]=PR[10,2:NULL]+R[21:dY]-R[23:RAD]    ;
+  21:  PR[4,3:HOME_01H]=PR[10,3:NULL]+R[22:dZ]    ;
+  22:   ;
+  23:  PR[5:HOME_02]=PR[1:HOME_00]    ;
+  24:  PR[5,1:HOME_02]=PR[5,1:HOME_02]-1    ;
+  25:  PR[5,2:HOME_02]=PR[5,2:HOME_02]+6    ;
+/POS
+/END

@@ -1,0 +1,42 @@
+/PROG  A_HOME_CHK
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "CHECK HOME00 POS";
+PROG_SIZE	= 397;
+CREATE		= DATE 22-01-14  TIME 12:15:32;
+MODIFIED	= DATE 22-02-02  TIME 11:06:54;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 17;
+MEMORY_SIZE	= 841;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+  ARC Welding Equipment : 1,*,*,*,*;
+/MN
+   1:  !***** ;
+   2:  !CHECK HOME PROGRAM ;
+   3:  !***** ;
+   4:   ;
+   5:  !INIT ;
+   6:  LBL[1:INIT] ;
+   7:  UTOOL_NUM=1 ;
+   8:  UFRAME_NUM=0 ;
+   9:   ;
+  10:  !START ;
+  11:  LBL[100:START] ;
+  12:  IF (RO[8:HOME REF POS]),JMP LBL[999] ;
+  13:  CALL A_HOME_00    ;
+  14:   ;
+  15:  !END ;
+  16:  LBL[999] ;
+  17:  END ;
+/POS
+/END

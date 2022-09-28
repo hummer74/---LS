@@ -1,0 +1,40 @@
+/PROG  A_HOME_00H
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "HOME_00H";
+PROG_SIZE	= 369;
+CREATE		= DATE 21-04-22  TIME 15:35:36;
+MODIFIED	= DATE 22-09-22  TIME 10:33:42;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 15;
+MEMORY_SIZE	= 821;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+/APPL
+  ARC Welding Equipment : 1,*,*,*,*;
+/MN
+   1:  !***** ;
+   2:  !HIGH HOME PROGRAM ;
+   3:  !***** ;
+   4:  UFRAME_NUM=0 ;
+   5:  UTOOL_NUM=1 ;
+   6:  !START ;
+   7:  LBL[100:START] ;
+   8:J PR[2:HOME_00H] 25% FINE    ;
+   9:  CALL A_SOUNDS    ;
+  10:   ;
+  11:  JMP LBL[999] ;
+  12:   ;
+  13:  !END ALL ;
+  14:  LBL[999] ;
+  15:  END ;
+/POS
+/END
